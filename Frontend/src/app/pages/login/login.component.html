@@ -1,0 +1,10 @@
+<div class="login-container">
+    <h2>Login to Your Account</h2>
+    <form (ngSubmit)="onLogin()">
+      <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+      <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+      <button routerLink="/home" class="btn">Login</button>
+    </form>
+    <p>Don't have an account? <a routerLink="/signup">Sign up here</a></p>
+  </div>
+  
