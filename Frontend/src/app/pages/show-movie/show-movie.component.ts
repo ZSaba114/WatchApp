@@ -8,16 +8,17 @@ import { Movie } from '../../models/movie';
 import { Actor } from '../../models/credit';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
 import { FooterComponent } from '../../components/footer/footer.component';
-
+import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { MoviesScrollerComponent } from '../../components/movies-scroller/movies-scroller.component';
 import { VideoComponent } from '../../components/video/video.component';
 import { Video } from '../../models/video';
 
+
 @Component({
   selector: 'app-show-movie',
   standalone: true,
-  imports: [AsyncPipe, DatePipe, CurrencyPipe, MoviesScrollerComponent, VideoComponent, InfiniteScrollModule,NavbarComponent, FooterComponent ],
+  imports: [AsyncPipe, DatePipe, CurrencyPipe, CommonModule, MoviesScrollerComponent, VideoComponent, InfiniteScrollModule,NavbarComponent, FooterComponent ],
   templateUrl: './show-movie.component.html',
   styleUrl: './show-movie.component.scss'
 })
@@ -51,4 +52,9 @@ export class ShowMovieComponent {
   closeVideo(){
     this.showVideo = false;
   }
+
+  trackByActorId(index: number, actor: { id: number }): number {
+  return actor.id;
+}
+
 }

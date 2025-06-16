@@ -16,6 +16,5 @@ export class LoginComponent {
 
   onLogin() {
     console.log('Login Info:', this.email, this.password);
-    // Here you would typically call your login API
   }
 }
